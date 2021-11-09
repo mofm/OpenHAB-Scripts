@@ -63,7 +63,7 @@ print('Mosquitto Humidity MSG {0}'.format(MOSQUITTO_HUMI_MSG))
 print('Mosquitto LWT MSG {0}'.format(MOSQUITTO_LWT_TOPIC))
 
 # How long to wait (in seconds) between measurements.
-print "Args length: " + str(len(sys.argv))
+print ("Args length: " + str(len(sys.argv)))
 FREQUENCY_SECONDS      = 300
 
 if (len(sys.argv) > 4):
@@ -97,12 +97,12 @@ try:
 
         # Publish to the MQTT channel
         try:
-            print 'Updating {0}'.format(MOSQUITTO_TEMP_MSG)
+            print ('Updating {0}'.format(MOSQUITTO_TEMP_MSG))
             (result1,mid) = mqttc.publish(MOSQUITTO_TEMP_MSG,temp)
-            print 'Updating {0}'.format(MOSQUITTO_HUMI_MSG)
+            print ('Updating {0}'.format(MOSQUITTO_HUMI_MSG))
 	    time.sleep(1)
             (result2,mid) = mqttc.publish(MOSQUITTO_HUMI_MSG,humidity)
-            print 'MQTT Updated result {0} and {1}'.format(result1,result2)
+            print ('MQTT Updated result {0} and {1}'.format(result1,result2))
             if result1 == 1 or result2 == 1:
                 raise ValueError('Result for one message was not 0')
 
