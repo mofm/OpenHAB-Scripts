@@ -56,7 +56,6 @@ try:
 
     while True:
         # Attempt to get sensor reading.
-        # humidity, temp = Adafruit_DHT.read(DHT_TYPE, DHT_PIN)
         [temp, humidity] = grovepi.dht(DHT_PIN, DHT_TYPE)
 
         # Skip to the next reading if a valid measurement couldn't be taken.
